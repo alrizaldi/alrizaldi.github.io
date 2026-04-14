@@ -59,7 +59,7 @@ export const projects = [
     tech: ["Next.js", "Vercel", "MongoDB", "Blob Storage"],
     github: "https://github.com/alrizaldi/base-compro",
     live: "https://base-compro.vercel.app/",
-    featured: false,
+    featured: true,
   },
 ];
 
