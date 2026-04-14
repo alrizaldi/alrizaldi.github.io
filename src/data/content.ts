@@ -57,7 +57,7 @@ export const projects = [
       "Custom content management system for managing company profiles.",
     image: "/images/projects/compro.PNG",
     tech: ["Next.js", "Vercel", "MongoDB", "Blob Storage"],
-    github: null,
+    github: "https://github.com/alrizaldi/base-compro",
     live: "https://base-compro.vercel.app/",
     featured: false,
   },
