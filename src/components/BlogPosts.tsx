@@ -14,7 +14,7 @@ export default function BlogPosts() {
             Latest Articles
           </h2>
           <p className="text-lg text-dark-600 dark:text-dark-300 max-w-2xl mx-auto">
-            Thoughts, tutorials, and insights from my journey as a software
+            Thoughts, tutorials, and insights from my journey as a full stack
             developer
           </p>
         </div>

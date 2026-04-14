@@ -4,7 +4,7 @@
 
 **Name:** Rizaldi Akbar  
 **Type:** Professional Portfolio + Personal Blog  
-**Role:** Software Developer  
+**Role:** Full stack Developer  
 **Design Style:** Minimal & Clean
 
 ---
@@ -213,7 +213,7 @@ personal-web/
 
 ```
 Hi, I'm Rizaldi Akbar
-Software Developer
+full stack Developer
 
 [One-liner tagline that shows your specialty]
 Example: "Building elegant solutions with clean code"

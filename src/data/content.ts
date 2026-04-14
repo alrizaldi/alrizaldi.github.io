@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: "Rizaldi Akbar",
-  title: "Software Developer",
+  title: "Full stack Developer",
   tagline: "Building elegant solutions with clean code",
   email: "rizaldi@example.com",
   location: "Indonesia",
@@ -31,7 +31,8 @@ export const projects = [
   {
     id: 1,
     title: "E-Commerce Platform",
-    description: "A full-stack e-commerce platform with payment integration and admin dashboard.",
+    description:
+      "A full-stack e-commerce platform with payment integration and admin dashboard.",
     image: "/images/projects/ecommerce.jpg",
     tech: ["Next.js", "TypeScript", "MySQL", "Stripe"],
     github: "https://github.com/rizaldiakbar/ecommerce",
@@ -41,7 +42,8 @@ export const projects = [
   {
     id: 2,
     title: "Task Management App",
-    description: "Collaborative task management tool with real-time updates and team features.",
+    description:
+      "Collaborative task management tool with real-time updates and team features.",
     image: "/images/projects/taskapp.jpg",
     tech: ["React", "Node.js", "Socket.io", "MongoDB"],
     github: "https://github.com/rizaldiakbar/taskapp",
@@ -51,7 +53,8 @@ export const projects = [
   {
     id: 3,
     title: "Weather Dashboard",
-    description: "Real-time weather tracking with location-based forecasts and visualizations.",
+    description:
+      "Real-time weather tracking with location-based forecasts and visualizations.",
     image: "/images/projects/weather.jpg",
     tech: ["Next.js", "Tailwind CSS", "Weather API"],
     github: "https://github.com/rizaldiakbar/weather",
@@ -61,7 +64,8 @@ export const projects = [
   {
     id: 4,
     title: "Portfolio CMS",
-    description: "Custom content management system for managing portfolio projects and blog posts.",
+    description:
+      "Custom content management system for managing portfolio projects and blog posts.",
     image: "/images/projects/cms.jpg",
     tech: ["Next.js", "Prisma", "PostgreSQL", "S3"],
     github: "https://github.com/rizaldiakbar/cms",
@@ -74,7 +78,8 @@ export const blogPosts = [
   {
     id: 1,
     title: "Getting Started with Next.js 14: A Complete Guide",
-    excerpt: "Learn how to build modern web applications with the latest Next.js features including Server Components and Server Actions.",
+    excerpt:
+      "Learn how to build modern web applications with the latest Next.js features including Server Components and Server Actions.",
     date: "2024-04-10",
     category: "Tutorial",
     readTime: "8 min read",
@@ -83,7 +88,8 @@ export const blogPosts = [
   {
     id: 2,
     title: "Why I Switched from Express to Next.js API Routes",
-    excerpt: "My journey from a separate backend to a unified full-stack framework and the benefits I discovered along the way.",
+    excerpt:
+      "My journey from a separate backend to a unified full-stack framework and the benefits I discovered along the way.",
     date: "2024-03-25",
     category: "Experience",
     readTime: "6 min read",
@@ -92,7 +98,8 @@ export const blogPosts = [
   {
     id: 3,
     title: "Building Scalable APIs with TypeScript and MySQL",
-    excerpt: "Best practices for creating type-safe, performant APIs with proper database optimization techniques.",
+    excerpt:
+      "Best practices for creating type-safe, performant APIs with proper database optimization techniques.",
     date: "2024-03-15",
     category: "Backend",
     readTime: "10 min read",

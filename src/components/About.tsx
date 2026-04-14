@@ -14,15 +14,15 @@ export default function About() {
           {/* Bio */}
           <div className="space-y-6">
             <p className="text-lg text-dark-600 dark:text-dark-300 leading-relaxed">
-              I'm a passionate software developer with a love for creating
+              I'm a passionate full stack developer with a love for creating
               elegant, user-friendly applications. With expertise in modern web
               technologies, I specialize in building full-stack solutions that
               make a difference.
             </p>
 
             <p className="text-lg text-dark-600 dark:text-dark-300 leading-relaxed">
-              My journey in software development started with a curiosity about
-              how things work on the internet. Today, I enjoy working with
+              My journey in full stack development started with a curiosity
+              about how things work on the internet. Today, I enjoy working with
               technologies like Next.js, TypeScript, and cloud services to build
               scalable applications.
             </p>

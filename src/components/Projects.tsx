@@ -15,7 +15,7 @@ export default function Projects() {
           </h2>
           <p className="text-lg text-dark-600 dark:text-dark-300 max-w-2xl mx-auto">
             A selection of projects that showcase my skills and passion for
-            building great software
+            building great full stack
           </p>
         </div>
 
