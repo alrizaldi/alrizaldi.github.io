@@ -52,24 +52,13 @@ export const projects = [
   },
   {
     id: 3,
-    title: "Weather Dashboard",
+    title: "Portfolio Company Profile CMS",
     description:
-      "Real-time weather tracking with location-based forecasts and visualizations.",
-    image: "/images/projects/weather.jpg",
-    tech: ["Next.js", "Tailwind CSS", "Weather API"],
-    github: "https://github.com/rizaldiakbar/weather",
-    live: "https://weather-demo.example.com",
-    featured: true,
-  },
-  {
-    id: 4,
-    title: "Portfolio CMS",
-    description:
-      "Custom content management system for managing portfolio projects and blog posts.",
-    image: "/images/projects/cms.jpg",
-    tech: ["Next.js", "Prisma", "PostgreSQL", "S3"],
-    github: "https://github.com/rizaldiakbar/cms",
-    live: null,
+      "Custom content management system for managing company profiles.",
+    image: "/images/projects/compro.PNG",
+    tech: ["Next.js", "Vercel", "MongoDB", "Blob Storage"],
+    github: null,
+    live: "https://base-compro.vercel.app/",
     featured: false,
   },
 ];
