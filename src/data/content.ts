@@ -52,7 +52,7 @@ export const projects = [
   },
   {
     id: 3,
-    title: "Portfolio Company Profile CMS",
+    title: "Company Profile CMS",
     description:
       "Custom content management system for managing company profiles.",
     image: "/images/projects/compro.PNG",
