@@ -1,24 +1,61 @@
 "use client";
 
-import { useState } from "react";
-import { Mail, Send, Github, Linkedin, Twitter } from "lucide-react";
+import { useState, useRef } from "react";
+import { Mail, Send, Github, Linkedin } from "lucide-react";
+import emailjs from "@emailjs/browser";
 import { siteConfig } from "@/data/content";
 
+// EmailJS configuration
+const EMAILJS_CONFIG = {
+  serviceId: "service_nm6smop",
+  templateId: "template_5q29mc9",
+  publicKey: "RMaT_LmwTUSznYAJB",
+};
+
 export default function Contact() {
+  const formRef = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
+  const [isSending, setIsSending] = useState(false);
+  const [sendStatus, setSendStatus] = useState<"idle" | "success" | "error">(
+    "idle",
+  );
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Implement form submission to API
-    console.log("Form submitted:", formData);
-    alert(
-      "Thank you for your message! (Demo - form submission not yet implemented)",
-    );
-    setFormData({ name: "", email: "", message: "" });
+    setIsSending(true);
+    setSendStatus("idle");
+
+    try {
+      await emailjs.send(
+        EMAILJS_CONFIG.serviceId,
+        EMAILJS_CONFIG.templateId,
+        {
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          title: "Contact Form Submission",
+        },
+        EMAILJS_CONFIG.publicKey,
+      );
+
+      setSendStatus("success");
+      setFormData({ name: "", email: "", message: "" });
+
+      // Reset status after 3 seconds
+      setTimeout(() => setSendStatus("idle"), 3000);
+    } catch (error) {
+      console.error("Failed to send email:", error);
+      setSendStatus("error");
+
+      // Reset status after 3 seconds
+      setTimeout(() => setSendStatus("idle"), 3000);
+    } finally {
+      setIsSending(false);
+    }
   };
 
   const handleChange = (
@@ -88,21 +125,13 @@ export default function Contact() {
                 >
                   <Linkedin className="w-6 h-6" />
                 </a>
-                <a
-                  href={siteConfig.social.twitter}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center w-12 h-12 bg-white dark:bg-dark-800 rounded-lg shadow hover:shadow-md transition-shadow text-dark-600 dark:text-dark-300 hover:text-dark-900 dark:hover:text-white"
-                >
-                  <Twitter className="w-6 h-6" />
-                </a>
               </div>
             </div>
           </div>
 
           {/* Contact Form */}
           <div className="bg-white dark:bg-dark-800 rounded-xl p-8 shadow-lg">
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label
                   htmlFor="name"
@@ -162,10 +191,51 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="w-full px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors flex items-center justify-center"
+                disabled={isSending}
+                className={`w-full px-6 py-3 font-medium rounded-lg transition-all flex items-center justify-center ${
+                  sendStatus === "success"
+                    ? "bg-green-600 hover:bg-green-700 text-white"
+                    : sendStatus === "error"
+                      ? "bg-red-600 hover:bg-red-700 text-white"
+                      : isSending
+                        ? "bg-primary-400 cursor-not-allowed text-white"
+                        : "bg-primary-600 hover:bg-primary-700 text-white"
+                }`}
               >
-                <Send className="w-5 h-5 mr-2" />
-                Send Message
+                {isSending ? (
+                  <>
+                    <svg
+                      className="animate-spin w-5 h-5 mr-2"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <circle
+                        className="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        strokeWidth="4"
+                      />
+                      <path
+                        className="opacity-75"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                      />
+                    </svg>
+                    Sending...
+                  </>
+                ) : sendStatus === "success" ? (
+                  <>Message Sent!</>
+                ) : sendStatus === "error" ? (
+                  <>Failed - Try Again</>
+                ) : (
+                  <>
+                    <Send className="w-5 h-5 mr-2" />
+                    Send Message
+                  </>
+                )}
               </button>
             </form>
           </div>

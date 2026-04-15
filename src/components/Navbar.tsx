@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, Github, Linkedin, Twitter } from "lucide-react";
+import { Menu, X, Github, Linkedin } from "lucide-react";
 import { siteConfig, navLinks } from "@/data/content";
 
 export default function Navbar() {
@@ -101,14 +101,6 @@ export default function Navbar() {
               >
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a
-                href={siteConfig.social.twitter}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-dark-600 dark:text-dark-300 hover:text-dark-900 dark:hover:text-white transition-colors hover:scale-110 transform"
-              >
-                <Twitter className="w-5 h-5" />
-              </a>
             </div>
           </div>
 
@@ -161,14 +153,6 @@ export default function Navbar() {
                 className="text-dark-600 dark:text-dark-300 hover:text-dark-900 dark:hover:text-white"
               >
                 <Linkedin className="w-5 h-5" />
-              </a>
-              <a
-                href={siteConfig.social.twitter}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-dark-600 dark:text-dark-300 hover:text-dark-900 dark:hover:text-white"
-              >
-                <Twitter className="w-5 h-5" />
               </a>
             </div>
           </div>

@@ -1,5 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
-import { Github, ExternalLink, ArrowRight } from "lucide-react";
+import { ExternalLink, ArrowRight } from "lucide-react";
 import { projects } from "@/data/content";
 
 export default function Projects() {
@@ -43,23 +44,43 @@ export default function Projects() {
 
 function ProjectCard({ project }: { project: (typeof projects)[number] }) {
   return (
-    <div className="bg-white dark:bg-dark-800 rounded-xl overflow-hidden shadow-lg hover-lift hover:shadow-xl transition-shadow">
+    <div className="group bg-white dark:bg-dark-800 rounded-xl overflow-hidden shadow-lg hover-lift hover:shadow-xl transition-shadow relative">
       {/* Project Image */}
-      <div className="h-48 bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center">
-        <div className="text-white text-center px-4">
-          <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-          <p className="text-sm opacity-90">Project Preview</p>
-        </div>
+      <div className="relative h-48 overflow-hidden">
+        <Image
+          src={project.image}
+          alt={`${project.title} - Project Preview`}
+          fill
+          className="object-cover object-top"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
+        {/* Hover overlay with Live Demo button */}
+        {project.live && (
+          <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <a
+              href={project.live}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-6 py-3 bg-white text-dark-900 font-semibold rounded-lg hover:bg-primary-50 transition-colors"
+            >
+              <ExternalLink className="w-5 h-5 mr-2" />
+              Live Demo
+            </a>
+          </div>
+        )}
       </div>
 
       {/* Project Info */}
       <div className="p-6">
+        <h3 className="text-xl font-bold text-dark-900 dark:text-white mb-2">
+          {project.title}
+        </h3>
         <p className="text-dark-600 dark:text-dark-300 mb-4 line-clamp-3">
           {project.description}
         </p>
 
         {/* Tech Stack */}
-        <div className="flex flex-wrap gap-2 mb-6">
+        <div className="flex flex-wrap gap-2">
           {project.tech.map((tech) => (
             <span
               key={tech}
@@ -68,30 +89,6 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
               {tech}
             </span>
           ))}
-        </div>
-
-        {/* Links */}
-        <div className="flex items-center space-x-4">
-          <a
-            href={project.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center text-dark-600 dark:text-dark-300 hover:text-dark-900 dark:hover:text-white transition-colors text-sm"
-          >
-            <Github className="w-4 h-4 mr-1" />
-            Code
-          </a>
-          {project.live && (
-            <a
-              href={project.live}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center text-dark-600 dark:text-dark-300 hover:text-dark-900 dark:hover:text-white transition-colors text-sm"
-            >
-              <ExternalLink className="w-4 h-4 mr-1" />
-              Live Demo
-            </a>
-          )}
         </div>
       </div>
     </div>

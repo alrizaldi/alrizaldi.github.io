@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Github, Linkedin, Twitter, Heart } from "lucide-react";
+import { Github, Linkedin, Heart } from "lucide-react";
 import { siteConfig, navLinks } from "@/data/content";
 
 export default function Footer() {
@@ -32,14 +32,6 @@ export default function Footer() {
               >
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a
-                href={siteConfig.social.twitter}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
-              >
-                <Twitter className="w-5 h-5" />
-              </a>
             </div>
           </div>
 
@@ -65,7 +57,10 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4">Contact</h4>
             <ul className="space-y-2 text-gray-400">
               <li>
-                <a href={`mailto:${siteConfig.email}`} className="hover:text-white transition-colors">
+                <a
+                  href={`mailto:${siteConfig.email}`}
+                  className="hover:text-white transition-colors"
+                >
                   {siteConfig.email}
                 </a>
               </li>
@@ -77,7 +72,8 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-gray-800 text-center text-gray-400">
           <p className="flex items-center justify-center">
-            Made with <Heart className="w-4 h-4 mx-1 text-red-500" /> by {siteConfig.name}
+            Made with <Heart className="w-4 h-4 mx-1 text-red-500" /> by{" "}
+            {siteConfig.name}
           </p>
           <p className="mt-2 text-sm">
             © {currentYear} {siteConfig.name}. All rights reserved.

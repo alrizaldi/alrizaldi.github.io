@@ -2,13 +2,12 @@ export const siteConfig = {
   name: "Rizaldi Akbar",
   title: "Full stack Developer",
   tagline: "Building elegant solutions with clean code",
-  email: "rizaldi@example.com",
+  email: "10rizaldiakbar@gmail.com",
   location: "Indonesia",
   status: "Open to opportunities",
   social: {
-    github: "https://github.com/rizaldiakbar",
-    linkedin: "https://linkedin.com/in/rizaldiakbar",
-    twitter: "https://twitter.com/rizaldiakbar",
+    github: "https://github.com/alrizaldi",
+    linkedin: "https://www.linkedin.com/in/rizaldiakbar/",
   },
 };
 
@@ -33,7 +32,7 @@ export const projects = [
     title: "E-Commerce Platform",
     description:
       "A full-stack e-commerce platform with payment integration and admin dashboard.",
-    image: "/images/projects/ecommerce.jpg",
+    image: "/images/projects/e-commerce.png",
     tech: ["Next.js", "TypeScript", "MySQL", "Stripe"],
     github: "https://github.com/rizaldiakbar/ecommerce",
     live: "https://ecommerce-demo.example.com",
@@ -44,7 +43,7 @@ export const projects = [
     title: "Task Management App",
     description:
       "Collaborative task management tool with real-time updates and team features.",
-    image: "/images/projects/taskapp.jpg",
+    image: "/images/projects/task-management.png",
     tech: ["React", "Node.js", "Socket.io", "MongoDB"],
     github: "https://github.com/rizaldiakbar/taskapp",
     live: "https://taskapp-demo.example.com",
@@ -55,7 +54,7 @@ export const projects = [
     title: "Company Profile CMS",
     description:
       "Custom content management system for managing company profiles.",
-    image: "/images/projects/compro.PNG",
+    image: "/images/projects/compro.png",
     tech: ["Next.js", "Vercel", "MongoDB", "Blob Storage"],
     github: "https://github.com/alrizaldi/base-compro",
     live: "https://base-compro.vercel.app/",
