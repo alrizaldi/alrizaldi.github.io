@@ -79,15 +79,6 @@ export default function AllProjectsPage() {
                     >
                       View Details
                     </Link>
-                    {/* <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center px-4 py-2 rounded-lg border border-dark-300 dark:border-dark-600 text-dark-700 dark:text-dark-300 hover:text-primary-600 dark:hover:text-primary-400 hover:border-primary-600 dark:hover:border-primary-400 transition-colors text-sm font-medium"
-                    >
-                      <Github className="w-4 h-4 mr-2" />
-                      Code
-                    </a> */}
                     {project.live && (
                       <a
                         href={project.live}

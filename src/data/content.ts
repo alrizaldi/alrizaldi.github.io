@@ -19,74 +19,79 @@ export const navLinks = [
 ];
 
 export const skills = {
-  languages: ["JavaScript", "TypeScript", "Python", "SQL"],
-  frontend: ["React", "Next.js", "HTML/CSS", "Tailwind CSS"],
-  backend: ["Node.js", "Express", "Next.js API Routes"],
-  databases: ["MySQL", "PostgreSQL", "MongoDB"],
-  tools: ["Git", "Docker", "CI/CD", "Linux"],
+  languages: ["JavaScript", "TypeScript", "Python", "PHP", "Dart"],
+  frontend: [
+    "React",
+    "Next.js",
+    "HTML/CSS",
+    "Tailwind CSS",
+    "Boostrap",
+    "Flutter",
+  ],
+  backend: ["Node.js", "Express", "Next.js API Routes", "Laravel"],
+  databases: ["MS SQL Server", "MySQL", "PostgreSQL", "MongoDB"],
+  tools: ["VS Code", "Git", "Docker", "CI/CD", "Linux", "Postman", "Hopscotch"],
 };
 
 export const projects = [
-  {
-    id: 1,
-    slug: "e-commerce-platform",
-    title: "E-Commerce Platform",
-    description:
-      "A full-stack e-commerce platform with payment integration and admin dashboard.",
-    image: "/images/projects/e-commerce.png",
-    tech: ["Next.js", "TypeScript", "MySQL", "Stripe"],
-    github: "https://github.com/rizaldiakbar/ecommerce",
-    live: "https://ecommerce-demo.example.com",
-    role: "Full Stack Developer",
-    period: "2024",
-    overview:
-      "This project was built to deliver a complete online shopping experience, from product discovery to checkout and post-purchase management. The focus was on creating a reliable storefront, a secure payment flow, and an admin experience that simplifies catalog and order operations.",
-    features: [
-      "Responsive product catalog with category browsing and product detail pages",
-      "Shopping cart and secure checkout flow integrated with Stripe",
-      "Admin dashboard for managing products, stock, and customer orders",
-      "Authentication and order history for returning customers",
-    ],
-    challenges: [
-      "Designing a checkout flow that feels simple while still handling edge cases like payment failures and stock changes",
-      "Keeping product and order data consistent between the customer-facing storefront and the admin dashboard",
-    ],
-    outcomes: [
-      "Delivered an end-to-end commerce workflow from discovery to payment",
-      "Improved maintainability by separating reusable UI components and typed business logic",
-    ],
-    featured: true,
-  },
-  {
-    id: 2,
-    slug: "task-management-app",
-    title: "Task Management App",
-    description:
-      "Collaborative task management tool with real-time updates and team features.",
-    image: "/images/projects/task-management.png",
-    tech: ["React", "Node.js", "Socket.io", "MongoDB"],
-    github: "https://github.com/rizaldiakbar/taskapp",
-    live: "https://taskapp-demo.example.com",
-    role: "Full Stack Developer",
-    period: "2024",
-    overview:
-      "This application helps teams organize work, assign responsibilities, and stay aligned through real-time collaboration. It was designed for fast-moving teams that need immediate updates without constantly refreshing the page.",
-    features: [
-      "Workspace-based task organization with statuses, priorities, and assignments",
-      "Real-time updates using Socket.io for task changes and collaboration events",
-      "Team collaboration features such as activity tracking and shared task views",
-      "MongoDB-backed API for flexible task and user data modeling",
-    ],
-    challenges: [
-      "Maintaining a responsive interface while syncing collaborative updates across multiple users",
-      "Structuring task data so filters, assignments, and status changes remain efficient and easy to extend",
-    ],
-    outcomes: [
-      "Created a collaborative workflow that reduces friction for distributed teams",
-      "Built a real-time architecture that can support future notification and analytics features",
-    ],
-    featured: true,
-  },
+  // {
+  //   id: 1,
+  //   slug: "e-commerce-platform",
+  //   title: "E-Commerce Platform",
+  //   description:
+  //     "A full-stack e-commerce platform with payment integration and admin dashboard.",
+  //   image: "/images/projects/e-commerce.png",
+  //   tech: ["Next.js", "TypeScript", "MySQL", "Stripe"],
+  //   live: "https://ecommerce-demo.example.com",
+  //   role: "Full Stack Developer",
+  //   period: "2024",
+  //   overview:
+  //     "This project was built to deliver a complete online shopping experience, from product discovery to checkout and post-purchase management. The focus was on creating a reliable storefront, a secure payment flow, and an admin experience that simplifies catalog and order operations.",
+  //   features: [
+  //     "Responsive product catalog with category browsing and product detail pages",
+  //     "Shopping cart and secure checkout flow integrated with Stripe",
+  //     "Admin dashboard for managing products, stock, and customer orders",
+  //     "Authentication and order history for returning customers",
+  //   ],
+  //   challenges: [
+  //     "Designing a checkout flow that feels simple while still handling edge cases like payment failures and stock changes",
+  //     "Keeping product and order data consistent between the customer-facing storefront and the admin dashboard",
+  //   ],
+  //   outcomes: [
+  //     "Delivered an end-to-end commerce workflow from discovery to payment",
+  //     "Improved maintainability by separating reusable UI components and typed business logic",
+  //   ],
+  //   featured: true,
+  // },
+  // {
+  //   id: 2,
+  //   slug: "task-management-app",
+  //   title: "Task Management App",
+  //   description:
+  //     "Collaborative task management tool with real-time updates and team features.",
+  //   image: "/images/projects/task-management.png",
+  //   tech: ["React", "Node.js", "Socket.io", "MongoDB"],
+  //   live: "https://taskapp-demo.example.com",
+  //   role: "Full Stack Developer",
+  //   period: "2024",
+  //   overview:
+  //     "This application helps teams organize work, assign responsibilities, and stay aligned through real-time collaboration. It was designed for fast-moving teams that need immediate updates without constantly refreshing the page.",
+  //   features: [
+  //     "Workspace-based task organization with statuses, priorities, and assignments",
+  //     "Real-time updates using Socket.io for task changes and collaboration events",
+  //     "Team collaboration features such as activity tracking and shared task views",
+  //     "MongoDB-backed API for flexible task and user data modeling",
+  //   ],
+  //   challenges: [
+  //     "Maintaining a responsive interface while syncing collaborative updates across multiple users",
+  //     "Structuring task data so filters, assignments, and status changes remain efficient and easy to extend",
+  //   ],
+  //   outcomes: [
+  //     "Created a collaborative workflow that reduces friction for distributed teams",
+  //     "Built a real-time architecture that can support future notification and analytics features",
+  //   ],
+  //   featured: true,
+  // },
   {
     id: 3,
     slug: "company-profile-cms",
@@ -122,32 +127,50 @@ export const projects = [
 export const blogPosts = [
   {
     id: 1,
-    title: "Getting Started with Next.js 14: A Complete Guide",
+    title: "Getting Started with Next.js 14: A Practical Developer Workflow",
     excerpt:
-      "Learn how to build modern web applications with the latest Next.js features including Server Components and Server Actions.",
+      "A practical walkthrough of how to start a scalable Next.js 14 project, from folder structure to deployment-ready patterns.",
     date: "2024-04-10",
     category: "Tutorial",
     readTime: "8 min read",
     slug: "getting-started-nextjs-14",
+    content: [
+      "Next.js 14 gives developers a solid full stack foundation out of the box. The App Router, server-first rendering model, and built-in optimization features reduce setup time and let you focus on product work.",
+      "When I start a new project, I begin by defining route groups and component boundaries early. This keeps the codebase maintainable as the project grows and helps avoid large refactors later.",
+      "For data access, I prefer colocating fetch logic with server components where possible, then isolating interactive state in client components only when needed. This pattern keeps performance strong and limits unnecessary client-side JavaScript.",
+      "Before deployment, I run a final pass on metadata, image usage, and loading states. These small details significantly improve perceived performance and user trust.",
+    ],
   },
   {
     id: 2,
-    title: "Why I Switched from Express to Next.js API Routes",
+    title: "Why I Moved from Standalone Express APIs to Next.js Route Handlers",
     excerpt:
-      "My journey from a separate backend to a unified full-stack framework and the benefits I discovered along the way.",
+      "The key reasons I consolidated frontend and backend development inside Next.js and what trade-offs I evaluate before deciding architecture.",
     date: "2024-03-25",
     category: "Experience",
     readTime: "6 min read",
     slug: "express-to-nextjs",
+    content: [
+      "I used to separate frontend and backend in different repositories by default. That approach still works well for large teams, but for many product scopes it creates overhead in deployment, versioning, and environment management.",
+      "Moving to Next.js route handlers simplified the development loop. I could build API endpoints near the UI that consumes them, which made debugging and iteration faster.",
+      "The biggest win was consistency: shared TypeScript types, fewer duplicated validation rules, and a cleaner onboarding experience for new contributors.",
+      "I still choose standalone services for systems that need independent scaling or strict service boundaries, but for most portfolio and product MVP work, a unified Next.js stack gives better delivery speed.",
+    ],
   },
   {
     id: 3,
-    title: "Building Scalable APIs with TypeScript and MySQL",
+    title: "Building Reliable APIs with TypeScript and SQL: Lessons from Production",
     excerpt:
-      "Best practices for creating type-safe, performant APIs with proper database optimization techniques.",
+      "Patterns I use to keep APIs maintainable, type-safe, and easy to evolve when product requirements change quickly.",
     date: "2024-03-15",
     category: "Backend",
     readTime: "10 min read",
-    slug: "scalable-apis-typescript-mysql",
+    slug: "scalable-apis-typescript-sql",
+    content: [
+      "Reliable API design starts with predictable contracts. I treat request and response shape definitions as first-class code assets, not afterthoughts.",
+      "TypeScript helps reduce accidental breakage, especially when paired with clear domain modules and strict linting rules. It also improves communication between frontend and backend developers.",
+      "In SQL-backed systems, query clarity matters as much as query speed. I prefer explicit query intent, indexed access paths, and migration discipline over premature optimization.",
+      "As projects grow, observability becomes essential. Logging key business events and error contexts makes debugging dramatically faster and supports better long-term maintenance.",
+    ],
   },
 ];

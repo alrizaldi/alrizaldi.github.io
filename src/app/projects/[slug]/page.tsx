@@ -81,15 +81,6 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
               </div>
 
               <div className="flex flex-wrap gap-4">
-                {/* <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center px-5 py-3 rounded-lg border border-dark-300 dark:border-dark-600 text-dark-700 dark:text-dark-300 hover:text-primary-600 dark:hover:text-primary-400 hover:border-primary-600 dark:hover:border-primary-400 transition-colors font-medium"
-                >
-                  <Github className="w-5 h-5 mr-2" />
-                  View Source Code
-                </a> */}
                 {project.live && (
                   <a
                     href={project.live}
