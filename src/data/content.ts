@@ -29,6 +29,7 @@ export const skills = {
 export const projects = [
   {
     id: 1,
+    slug: "e-commerce-platform",
     title: "E-Commerce Platform",
     description:
       "A full-stack e-commerce platform with payment integration and admin dashboard.",
@@ -36,10 +37,29 @@ export const projects = [
     tech: ["Next.js", "TypeScript", "MySQL", "Stripe"],
     github: "https://github.com/rizaldiakbar/ecommerce",
     live: "https://ecommerce-demo.example.com",
+    role: "Full Stack Developer",
+    period: "2024",
+    overview:
+      "This project was built to deliver a complete online shopping experience, from product discovery to checkout and post-purchase management. The focus was on creating a reliable storefront, a secure payment flow, and an admin experience that simplifies catalog and order operations.",
+    features: [
+      "Responsive product catalog with category browsing and product detail pages",
+      "Shopping cart and secure checkout flow integrated with Stripe",
+      "Admin dashboard for managing products, stock, and customer orders",
+      "Authentication and order history for returning customers",
+    ],
+    challenges: [
+      "Designing a checkout flow that feels simple while still handling edge cases like payment failures and stock changes",
+      "Keeping product and order data consistent between the customer-facing storefront and the admin dashboard",
+    ],
+    outcomes: [
+      "Delivered an end-to-end commerce workflow from discovery to payment",
+      "Improved maintainability by separating reusable UI components and typed business logic",
+    ],
     featured: true,
   },
   {
     id: 2,
+    slug: "task-management-app",
     title: "Task Management App",
     description:
       "Collaborative task management tool with real-time updates and team features.",
@@ -47,10 +67,29 @@ export const projects = [
     tech: ["React", "Node.js", "Socket.io", "MongoDB"],
     github: "https://github.com/rizaldiakbar/taskapp",
     live: "https://taskapp-demo.example.com",
+    role: "Full Stack Developer",
+    period: "2024",
+    overview:
+      "This application helps teams organize work, assign responsibilities, and stay aligned through real-time collaboration. It was designed for fast-moving teams that need immediate updates without constantly refreshing the page.",
+    features: [
+      "Workspace-based task organization with statuses, priorities, and assignments",
+      "Real-time updates using Socket.io for task changes and collaboration events",
+      "Team collaboration features such as activity tracking and shared task views",
+      "MongoDB-backed API for flexible task and user data modeling",
+    ],
+    challenges: [
+      "Maintaining a responsive interface while syncing collaborative updates across multiple users",
+      "Structuring task data so filters, assignments, and status changes remain efficient and easy to extend",
+    ],
+    outcomes: [
+      "Created a collaborative workflow that reduces friction for distributed teams",
+      "Built a real-time architecture that can support future notification and analytics features",
+    ],
     featured: true,
   },
   {
     id: 3,
+    slug: "company-profile-cms",
     title: "Company Profile CMS",
     description:
       "Custom content management system for managing company profiles.",
@@ -58,6 +97,24 @@ export const projects = [
     tech: ["Next.js", "Vercel", "MongoDB", "Blob Storage"],
     github: "https://github.com/alrizaldi/base-compro",
     live: "https://base-compro.vercel.app/",
+    role: "Full Stack Developer",
+    period: "2024",
+    overview:
+      "This project provides companies with a manageable web presence through a custom CMS tailored to profile content. The system makes it easy to update pages, media, and structured company information without requiring code changes.",
+    features: [
+      "Custom CMS interface for editing company profile content and website sections",
+      "Media upload support using blob storage for images and assets",
+      "Fast deployment workflow with Next.js and Vercel",
+      "Flexible content structure for different company profile needs",
+    ],
+    challenges: [
+      "Creating a CMS that feels simple for non-technical users while remaining flexible for different page layouts",
+      "Managing uploaded assets and published content in a way that keeps the site fast and easy to maintain",
+    ],
+    outcomes: [
+      "Reduced the need for direct developer intervention when content updates are required",
+      "Provided a reusable base for future company profile projects",
+    ],
     featured: true,
   },
 ];

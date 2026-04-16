@@ -50,10 +50,14 @@ export default function Hero() {
               Get In Touch
             </Link>
 
-            <button className="inline-flex items-center px-8 py-3 rounded-lg border-2 border-dark-300 dark:border-dark-600 hover:border-primary-600 dark:hover:border-primary-400 text-dark-700 dark:text-dark-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-all hover:scale-105">
+            <a
+              href="/pdf/CV%20Rizaldi%20Akbar.pdf"
+              download="CV Rizaldi Akbar.pdf"
+              className="inline-flex items-center px-8 py-3 rounded-lg border-2 border-dark-300 dark:border-dark-600 hover:border-primary-600 dark:hover:border-primary-400 text-dark-700 dark:text-dark-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-all hover:scale-105"
+            >
               Download Resume
               <Download className="ml-2 w-5 h-5" />
-            </button>
+            </a>
           </div>
 
           {/* Scroll Indicator */}
