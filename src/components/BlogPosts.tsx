@@ -6,21 +6,21 @@ export default function BlogPosts() {
   const latestPosts = blogPosts.slice(0, 3);
 
   return (
-    <section id="blog" className="py-20 bg-white dark:bg-dark-800">
+    <section id="blog" className="section-shell">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-dark-900 dark:text-white mb-4">
+        <div className="text-center mb-14">
+          <h2 className="section-title mb-4">
             Latest Articles
           </h2>
-          <p className="text-lg text-dark-600 dark:text-dark-300 max-w-2xl mx-auto">
+          <p className="section-description max-w-2xl mx-auto">
             Thoughts, tutorials, and insights from my journey as a full stack
             developer
           </p>
         </div>
 
         {/* Blog Posts Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 stagger-children">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12 stagger-soft">
           {latestPosts.map((post) => (
             <BlogCard key={post.id} post={post} />
           ))}
@@ -30,7 +30,7 @@ export default function BlogPosts() {
         <div className="text-center">
           <Link
             href="/blog"
-            className="inline-flex items-center text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium"
+            className="inline-flex items-center text-primary-700 dark:text-primary-300 hover:text-primary-800 dark:hover:text-primary-200 font-semibold transition-colors"
           >
             Read All Articles
             <ArrowRight className="ml-2 w-5 h-5" />
@@ -49,10 +49,10 @@ function BlogCard({ post }: { post: (typeof blogPosts)[number] }) {
   });
 
   return (
-    <article className="bg-gray-50 dark:bg-dark-900 rounded-xl overflow-hidden hover-lift hover:shadow-lg transition-shadow">
+    <article className="elegant-card elegant-card-hover overflow-hidden">
       <div className="p-6">
         {/* Category Badge */}
-        <span className="inline-block px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400 rounded-full text-xs font-semibold mb-4">
+        <span className="inline-block px-3 py-1 border border-primary-100/80 dark:border-primary-900/50 bg-primary-100/70 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400 rounded-full text-xs font-semibold mb-4">
           {post.category}
         </span>
 

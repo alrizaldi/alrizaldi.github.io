@@ -4,22 +4,22 @@ import { siteConfig, skills } from "@/data/content";
 
 export default function About() {
   return (
-    <section id="about" className="py-20 bg-white dark:bg-dark-800">
+    <section id="about" className="section-shell">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
-        <h2 className="text-4xl font-bold text-dark-900 dark:text-white mb-12 text-center">
+        <h2 className="section-title mb-14 text-center">
           About Me
         </h2>
 
-        <div className="grid md:grid-cols-5 gap-12 items-start mb-16">
+        <div className="grid md:grid-cols-5 gap-8 md:gap-12 items-start mb-12 md:mb-16">
           {/* Photo - 2 columns */}
           <div className="md:col-span-2 flex justify-center">
             <div className="relative">
               {/* Decorative background */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-primary-500 to-primary-700 rounded-2xl opacity-20 blur-lg"></div>
+              <div className="absolute -inset-4 bg-gradient-to-r from-primary-300 to-primary-600 rounded-2xl opacity-20 blur-lg"></div>
 
               {/* Photo container */}
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-dark-700 max-h-[450px]">
+              <div className="relative rounded-2xl overflow-hidden shadow-[0_20px_45px_-25px_rgba(15,23,42,0.5)] border-4 border-white/80 dark:border-dark-700/80 max-h-[450px]">
                 <Image
                   src="/images/profile.jpg"
                   alt={`${siteConfig.name} - ${siteConfig.title}`}
@@ -40,7 +40,7 @@ export default function About() {
           </div>
 
           {/* Bio - 3 columns */}
-          <div className="md:col-span-3 space-y-6">
+          <div className="md:col-span-3 space-y-5 md:space-y-6">
             <p className="text-justify text-lg text-dark-600 dark:text-dark-300 leading-relaxed">
               I'm a passionate full stack developer with a love for creating
               elegant, user-friendly applications. With expertise in modern web
@@ -63,7 +63,7 @@ export default function About() {
             </p>
 
             {/* Quick Facts */}
-            <div className="space-y-3 pt-4 border-t border-dark-200 dark:border-dark-700">
+            <div className="space-y-3 pt-4 border-t border-dark-200/80 dark:border-dark-700/80">
               <div className="flex items-center text-dark-600 dark:text-dark-300">
                 <MapPin className="w-5 h-5 mr-3 text-primary-600 dark:text-primary-400 flex-shrink-0" />
                 <span>{siteConfig.location}</span>
@@ -80,8 +80,8 @@ export default function About() {
         </div>
 
         {/* Skills Section - Full Width */}
-        <div className="bg-gray-50 dark:bg-dark-900 rounded-2xl p-8 shadow-inner">
-          <h3 className="text-2xl font-bold text-dark-900 dark:text-white mb-8 text-center">
+        <div className="elegant-card p-8 md:p-10">
+          <h3 className="text-2xl font-bold tracking-tight text-dark-900 dark:text-white mb-8 text-center">
             Skills & Technologies
           </h3>
 
@@ -108,7 +108,7 @@ function SkillCategory({ title, items }: { title: string; items: string[] }) {
         {items.map((skill) => (
           <span
             key={skill}
-            className="px-4 py-2 bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-400 rounded-lg text-sm font-medium"
+            className="px-4 py-2 border border-primary-100/80 dark:border-primary-900/50 bg-primary-50/70 dark:bg-primary-900/20 text-primary-700 dark:text-primary-400 rounded-lg text-sm font-medium"
           >
             {skill}
           </span>

@@ -9,7 +9,7 @@ import ScrollAnimation from "@/components/ScrollAnimation";
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen text-dark-900 dark:text-white">
       <Navbar />
       <ScrollAnimation>
         <Hero />

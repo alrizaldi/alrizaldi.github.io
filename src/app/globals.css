@@ -7,11 +7,9 @@
   --background-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 248, 250, 252;
-    --background-rgb: 15, 23, 42;
-  }
+.dark {
+  --foreground-rgb: 248, 250, 252;
+  --background-rgb: 15, 23, 42;
 }
 
 html {
@@ -21,7 +19,43 @@ html {
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-rgb));
+  background:
+    radial-gradient(circle at top right, rgba(14, 165, 233, 0.08), transparent 35%),
+    radial-gradient(circle at bottom left, rgba(2, 132, 199, 0.06), transparent 40%),
+    rgb(var(--background-rgb));
+}
+
+::selection {
+  background: rgba(2, 132, 199, 0.2);
+  color: rgb(var(--foreground-rgb));
+}
+
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 100;
+  padding: 0.625rem 0.9rem;
+  border-radius: 0.75rem;
+  background: #0284c7;
+  color: #ffffff;
+  font-weight: 600;
+  transform: translateY(-160%);
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #0284c7;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.2);
 }
 
 @layer utilities {
@@ -100,5 +134,87 @@ body {
   .hover-lift:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  .section-shell {
+    @apply py-16 sm:py-20 md:py-24;
+  }
+
+  .section-title {
+    @apply text-3xl sm:text-4xl font-bold tracking-tight text-dark-900 dark:text-white;
+  }
+
+  .section-description {
+    @apply text-base sm:text-lg text-dark-600 dark:text-dark-300 leading-relaxed;
+  }
+
+  .elegant-card {
+    @apply rounded-2xl border border-dark-200/70 dark:border-dark-700/70 bg-white/80 dark:bg-dark-800/80 backdrop-blur-sm shadow-[0_10px_35px_-18px_rgba(15,23,42,0.35)] transition-all duration-300;
+  }
+
+  .elegant-card-hover {
+    @apply hover:-translate-y-1 hover:shadow-[0_18px_50px_-24px_rgba(15,23,42,0.5)];
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-xl bg-primary-600 dark:bg-primary-500 px-8 py-3 text-sm font-semibold text-white shadow-[0_10px_24px_-14px_rgba(2,132,199,0.8)] transition-all duration-300 hover:bg-primary-700 dark:hover:bg-primary-400 hover:-translate-y-0.5;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-xl border border-dark-300 dark:border-dark-500 bg-white/80 dark:bg-dark-700/80 px-8 py-3 text-sm font-semibold text-dark-700 dark:text-white transition-all duration-300 hover:border-primary-500 dark:hover:border-primary-300 hover:text-primary-700 dark:hover:text-primary-200 hover:-translate-y-0.5;
+  }
+
+  .fade-in-soft {
+    animation: fadeInUp 0.55s ease-out both;
+  }
+
+  .stagger-soft > * {
+    opacity: 0;
+    animation: fadeInUp 0.55s ease-out forwards;
+  }
+
+  .stagger-soft > *:nth-child(1) {
+    animation-delay: 0.06s;
+  }
+  .stagger-soft > *:nth-child(2) {
+    animation-delay: 0.12s;
+  }
+  .stagger-soft > *:nth-child(3) {
+    animation-delay: 0.18s;
+  }
+  .stagger-soft > *:nth-child(4) {
+    animation-delay: 0.24s;
+  }
+  .stagger-soft > *:nth-child(5) {
+    animation-delay: 0.3s;
+  }
+  .stagger-soft > *:nth-child(6) {
+    animation-delay: 0.36s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-on-scroll,
+  .animate-on-scroll.visible,
+  .stagger-children > *,
+  .stagger-soft > *,
+  .fade-in-soft {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
   }
 }

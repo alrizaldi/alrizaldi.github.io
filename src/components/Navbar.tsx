@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import type { MouseEvent } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import { Menu, X, Github, Linkedin } from "lucide-react";
+import { Menu, X, Github, Linkedin, Moon, Sun } from "lucide-react";
 import { siteConfig, navLinks } from "@/data/content";
 
 export default function Navbar() {
@@ -14,6 +14,12 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState("");
   const [scrolled, setScrolled] = useState(false);
   const [activeClickAnimation, setActiveClickAnimation] = useState("");
+  const [isDark, setIsDark] = useState(false);
+  const [isThemeAnimating, setIsThemeAnimating] = useState(false);
+
+  useEffect(() => {
+    setIsDark(document.documentElement.classList.contains("dark"));
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -70,13 +76,22 @@ export default function Navbar() {
     }
   };
 
+  const toggleTheme = () => {
+    const nextIsDark = !isDark;
+    setIsDark(nextIsDark);
+    document.documentElement.classList.toggle("dark", nextIsDark);
+    localStorage.setItem("theme", nextIsDark ? "dark" : "light");
+    setIsThemeAnimating(true);
+    window.setTimeout(() => setIsThemeAnimating(false), 350);
+  };
+
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/90 dark:bg-dark-900/90 backdrop-blur-md shadow-md"
-          : "bg-white/80 dark:bg-dark-900/80 backdrop-blur-md"
-      } border-b border-dark-200 dark:border-dark-700`}
+          ? "bg-white/88 dark:bg-dark-900/88 backdrop-blur-xl shadow-[0_14px_35px_-26px_rgba(15,23,42,0.8)]"
+          : "bg-white/70 dark:bg-dark-900/70 backdrop-blur-xl"
+      } border-b border-dark-200/70 dark:border-dark-700/70`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
@@ -84,7 +99,7 @@ export default function Navbar() {
           <Link
             href="/"
             onClick={handleLogoClick}
-            className={`text-xl font-bold text-dark-900 dark:text-white hover:text-primary-600 dark:hover:text-primary-400 transition-all duration-200 ${
+            className={`text-xl font-bold tracking-tight text-dark-900 dark:text-white hover:text-primary-600 dark:hover:text-primary-400 transition-all duration-200 ${
               activeClickAnimation === "brand-logo"
                 ? "scale-95 opacity-80"
                 : "scale-100 opacity-100"
@@ -102,7 +117,7 @@ export default function Navbar() {
                   triggerClickAnimation(`desktop-${link.href}`);
                   handleNavClick(link.href);
                 }}
-                className={`relative text-dark-600 dark:text-dark-300 hover:text-primary-600 dark:hover:text-primary-400 transition-all duration-300 cursor-pointer ${
+                className={`relative text-sm font-medium text-dark-600 dark:text-dark-300 hover:text-primary-600 dark:hover:text-primary-400 transition-all duration-300 cursor-pointer ${
                   activeSection === link.href
                     ? "text-primary-600 dark:text-primary-400 font-semibold"
                     : ""
@@ -122,6 +137,32 @@ export default function Navbar() {
 
             {/* Social Links */}
             <div className="flex items-center space-x-4 ml-4 border-l border-dark-200 dark:border-dark-700 pl-4">
+              <button
+                onClick={() => {
+                  triggerClickAnimation("desktop-theme");
+                  toggleTheme();
+                }}
+                aria-label="Toggle dark mode"
+                className={`flex items-center justify-center w-9 h-9 rounded-lg border border-dark-200/80 dark:border-dark-700/80 text-dark-600 dark:text-dark-300 hover:text-dark-900 dark:hover:text-white hover:border-primary-500 dark:hover:border-primary-400 transition-all duration-200 ${
+                  activeClickAnimation === "desktop-theme"
+                    ? "scale-95 opacity-80"
+                    : "scale-100 opacity-100"
+                }`}
+              >
+                {isDark ? (
+                  <Sun
+                    className={`w-4 h-4 transition-transform duration-300 ${
+                      isThemeAnimating ? "rotate-180 scale-110" : "rotate-0 scale-100"
+                    }`}
+                  />
+                ) : (
+                  <Moon
+                    className={`w-4 h-4 transition-transform duration-300 ${
+                      isThemeAnimating ? "-rotate-12 scale-110" : "rotate-0 scale-100"
+                    }`}
+                  />
+                )}
+              </button>
               <a
                 href={siteConfig.social.github}
                 target="_blank"
@@ -152,19 +193,47 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            onClick={() => {
-              triggerClickAnimation("mobile-menu-toggle");
-              setIsOpen(!isOpen);
-            }}
-            className={`md:hidden text-dark-600 dark:text-dark-300 hover:text-dark-900 dark:hover:text-white transition-all duration-200 ${
-              activeClickAnimation === "mobile-menu-toggle"
-                ? "scale-95 opacity-80"
-                : "scale-100 opacity-100"
-            }`}
-          >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          <div className="md:hidden flex items-center gap-2">
+            <button
+              onClick={() => {
+                triggerClickAnimation("mobile-theme");
+                toggleTheme();
+              }}
+              aria-label="Toggle dark mode"
+              className={`flex items-center justify-center w-9 h-9 rounded-lg border border-dark-200/80 dark:border-dark-700/80 text-dark-600 dark:text-dark-300 hover:text-dark-900 dark:hover:text-white transition-all duration-200 ${
+                activeClickAnimation === "mobile-theme"
+                  ? "scale-95 opacity-80"
+                  : "scale-100 opacity-100"
+              }`}
+            >
+              {isDark ? (
+                <Sun
+                  className={`w-4 h-4 transition-transform duration-300 ${
+                    isThemeAnimating ? "rotate-180 scale-110" : "rotate-0 scale-100"
+                  }`}
+                />
+              ) : (
+                <Moon
+                  className={`w-4 h-4 transition-transform duration-300 ${
+                    isThemeAnimating ? "-rotate-12 scale-110" : "rotate-0 scale-100"
+                  }`}
+                />
+              )}
+            </button>
+            <button
+              onClick={() => {
+                triggerClickAnimation("mobile-menu-toggle");
+                setIsOpen(!isOpen);
+              }}
+              className={`text-dark-600 dark:text-dark-300 hover:text-dark-900 dark:hover:text-white transition-all duration-200 ${
+                activeClickAnimation === "mobile-menu-toggle"
+                  ? "scale-95 opacity-80"
+                  : "scale-100 opacity-100"
+              }`}
+            >
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
       </div>
 

@@ -15,31 +15,31 @@ export default function Hero() {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center pt-16 bg-gradient-to-b from-primary-50 to-white dark:from-dark-900 dark:to-dark-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="text-center">
+    <section className="min-h-screen flex items-center justify-center pt-16 sm:pt-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24">
+        <div className="text-center fade-in-soft">
           {/* Greeting */}
-          <p className="text-primary-600 dark:text-primary-400 text-lg font-medium mb-4">
+          <p className="text-primary-700 dark:text-primary-300 text-base sm:text-lg font-semibold tracking-wide mb-5">
             Hi, I'm
           </p>
 
           {/* Name */}
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-dark-900 dark:text-white mb-4">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight text-dark-900 dark:text-white mb-5">
             {siteConfig.name}
           </h1>
 
           {/* Title */}
-          <p className="text-2xl sm:text-3xl text-dark-600 dark:text-dark-300 mb-6">
+          <p className="text-2xl sm:text-3xl font-medium text-dark-600 dark:text-dark-300 mb-7">
             {siteConfig.title}
           </p>
 
           {/* Tagline */}
-          <p className="text-xl text-dark-500 dark:text-dark-400 max-w-2xl mx-auto mb-10">
+          <p className="text-lg sm:text-xl text-dark-500 dark:text-dark-400 max-w-2xl mx-auto leading-relaxed mb-11">
             {siteConfig.tagline}
           </p>
 
           {/* Status Badge */}
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-sm font-medium mb-10">
+          <div className="inline-flex items-center px-4 py-2 rounded-full border border-green-200 dark:border-green-900/50 bg-green-50/80 dark:bg-green-900/20 text-green-700 dark:text-green-400 text-sm font-medium mb-11">
             <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
             {siteConfig.status}
           </div>
@@ -48,7 +48,7 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 stagger-children">
             <Link
               href="#projects"
-              className="inline-flex items-center px-8 py-3 rounded-lg bg-primary-600 hover:bg-primary-700 text-white font-medium transition-all hover:scale-105 hover:shadow-lg"
+              className="btn-primary"
             >
               View My Work
               <ArrowRight className="ml-2 w-5 h-5" />
@@ -57,7 +57,7 @@ export default function Hero() {
             <Link
               href="#contact"
               onClick={handleGetInTouchClick}
-              className="inline-flex items-center px-8 py-3 rounded-lg border-2 border-dark-300 dark:border-dark-600 hover:border-primary-600 dark:hover:border-primary-400 text-dark-700 dark:text-dark-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-all hover:scale-105"
+              className="btn-secondary"
             >
               Get In Touch
             </Link>
@@ -65,7 +65,7 @@ export default function Hero() {
             <a
               href="/pdf/CV%20Rizaldi%20Akbar.pdf"
               download="CV Rizaldi Akbar.pdf"
-              className="inline-flex items-center px-8 py-3 rounded-lg border-2 border-dark-300 dark:border-dark-600 hover:border-primary-600 dark:hover:border-primary-400 text-dark-700 dark:text-dark-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-all hover:scale-105"
+              className="btn-secondary"
             >
               Download Resume
               <Download className="ml-2 w-5 h-5" />
@@ -73,7 +73,7 @@ export default function Hero() {
           </div>
 
           {/* Scroll Indicator */}
-          <div className="mt-16 animate-bounce">
+          <div className="mt-20 animate-bounce">
             <ArrowRight className="w-6 h-6 mx-auto text-dark-400 dark:text-dark-500 rotate-90" />
           </div>
         </div>

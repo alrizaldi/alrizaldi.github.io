@@ -6,12 +6,12 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-dark-900 text-white py-12">
+    <footer className="bg-dark-900/95 text-white py-14 border-t border-dark-700/70">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
           <div>
-            <h3 className="text-2xl font-bold mb-4">{siteConfig.name}</h3>
+            <h3 className="text-2xl font-bold tracking-tight mb-4">{siteConfig.name}</h3>
             <p className="text-gray-400 mb-4">
               {siteConfig.title} - {siteConfig.tagline}
             </p>
@@ -20,7 +20,7 @@ export default function Footer() {
                 href={siteConfig.social.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-gray-400 hover:text-white transition-colors hover:-translate-y-0.5"
               >
                 <Github className="w-5 h-5" />
               </a>
@@ -28,7 +28,7 @@ export default function Footer() {
                 href={siteConfig.social.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-gray-400 hover:text-white transition-colors hover:-translate-y-0.5"
               >
                 <Linkedin className="w-5 h-5" />
               </a>
