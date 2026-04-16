@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import type { MouseEvent } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { Menu, X, Github, Linkedin } from "lucide-react";
 import { siteConfig, navLinks } from "@/data/content";
@@ -12,6 +13,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const [scrolled, setScrolled] = useState(false);
+  const [activeClickAnimation, setActiveClickAnimation] = useState("");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -54,6 +56,20 @@ export default function Navbar() {
     }
   };
 
+  const triggerClickAnimation = (key: string) => {
+    setActiveClickAnimation(key);
+    window.setTimeout(() => setActiveClickAnimation(""), 220);
+  };
+
+  const handleLogoClick = (event: MouseEvent<HTMLAnchorElement>) => {
+    triggerClickAnimation("brand-logo");
+
+    if (pathname === "/") {
+      event.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
@@ -67,7 +83,12 @@ export default function Navbar() {
           {/* Logo */}
           <Link
             href="/"
-            className="text-xl font-bold text-dark-900 dark:text-white hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+            onClick={handleLogoClick}
+            className={`text-xl font-bold text-dark-900 dark:text-white hover:text-primary-600 dark:hover:text-primary-400 transition-all duration-200 ${
+              activeClickAnimation === "brand-logo"
+                ? "scale-95 opacity-80"
+                : "scale-100 opacity-100"
+            }`}
           >
             {siteConfig.name}
           </Link>
@@ -77,11 +98,18 @@ export default function Navbar() {
             {navLinks.map((link) => (
               <button
                 key={link.name}
-                onClick={() => handleNavClick(link.href)}
+                onClick={() => {
+                  triggerClickAnimation(`desktop-${link.href}`);
+                  handleNavClick(link.href);
+                }}
                 className={`relative text-dark-600 dark:text-dark-300 hover:text-primary-600 dark:hover:text-primary-400 transition-all duration-300 cursor-pointer ${
                   activeSection === link.href
                     ? "text-primary-600 dark:text-primary-400 font-semibold"
                     : ""
+                } ${
+                  activeClickAnimation === `desktop-${link.href}`
+                    ? "scale-95 opacity-80"
+                    : "scale-100 opacity-100"
                 }`}
               >
                 {link.name}
@@ -98,7 +126,12 @@ export default function Navbar() {
                 href={siteConfig.social.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-dark-600 dark:text-dark-300 hover:text-dark-900 dark:hover:text-white transition-colors hover:scale-110 transform"
+                onClick={() => triggerClickAnimation("desktop-github")}
+                className={`text-dark-600 dark:text-dark-300 hover:text-dark-900 dark:hover:text-white transition-all duration-200 hover:scale-110 transform ${
+                  activeClickAnimation === "desktop-github"
+                    ? "scale-95 opacity-80"
+                    : "scale-100 opacity-100"
+                }`}
               >
                 <Github className="w-5 h-5" />
               </a>
@@ -106,7 +139,12 @@ export default function Navbar() {
                 href={siteConfig.social.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-dark-600 dark:text-dark-300 hover:text-dark-900 dark:hover:text-white transition-colors hover:scale-110 transform"
+                onClick={() => triggerClickAnimation("desktop-linkedin")}
+                className={`text-dark-600 dark:text-dark-300 hover:text-dark-900 dark:hover:text-white transition-all duration-200 hover:scale-110 transform ${
+                  activeClickAnimation === "desktop-linkedin"
+                    ? "scale-95 opacity-80"
+                    : "scale-100 opacity-100"
+                }`}
               >
                 <Linkedin className="w-5 h-5" />
               </a>
@@ -115,8 +153,15 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-dark-600 dark:text-dark-300 hover:text-dark-900 dark:hover:text-white transition-colors"
+            onClick={() => {
+              triggerClickAnimation("mobile-menu-toggle");
+              setIsOpen(!isOpen);
+            }}
+            className={`md:hidden text-dark-600 dark:text-dark-300 hover:text-dark-900 dark:hover:text-white transition-all duration-200 ${
+              activeClickAnimation === "mobile-menu-toggle"
+                ? "scale-95 opacity-80"
+                : "scale-100 opacity-100"
+            }`}
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -134,11 +179,18 @@ export default function Navbar() {
             {navLinks.map((link) => (
               <button
                 key={link.name}
-                onClick={() => handleNavClick(link.href)}
+                onClick={() => {
+                  triggerClickAnimation(`mobile-${link.href}`);
+                  handleNavClick(link.href);
+                }}
                 className={`block w-full text-left transition-all duration-300 ${
                   activeSection === link.href
                     ? "text-primary-600 dark:text-primary-400 font-semibold pl-4 border-l-4 border-primary-600 dark:border-primary-400"
                     : "text-dark-600 dark:text-dark-300 hover:text-primary-600 dark:hover:text-primary-400 pl-4"
+                } ${
+                  activeClickAnimation === `mobile-${link.href}`
+                    ? "scale-95 opacity-80"
+                    : "scale-100 opacity-100"
                 }`}
               >
                 {link.name}
@@ -151,7 +203,12 @@ export default function Navbar() {
                 href={siteConfig.social.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-dark-600 dark:text-dark-300 hover:text-dark-900 dark:hover:text-white"
+                onClick={() => triggerClickAnimation("mobile-github")}
+                className={`text-dark-600 dark:text-dark-300 hover:text-dark-900 dark:hover:text-white transition-all duration-200 ${
+                  activeClickAnimation === "mobile-github"
+                    ? "scale-95 opacity-80"
+                    : "scale-100 opacity-100"
+                }`}
               >
                 <Github className="w-5 h-5" />
               </a>
@@ -159,7 +216,12 @@ export default function Navbar() {
                 href={siteConfig.social.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-dark-600 dark:text-dark-300 hover:text-dark-900 dark:hover:text-white"
+                onClick={() => triggerClickAnimation("mobile-linkedin")}
+                className={`text-dark-600 dark:text-dark-300 hover:text-dark-900 dark:hover:text-white transition-all duration-200 ${
+                  activeClickAnimation === "mobile-linkedin"
+                    ? "scale-95 opacity-80"
+                    : "scale-100 opacity-100"
+                }`}
               >
                 <Linkedin className="w-5 h-5" />
               </a>

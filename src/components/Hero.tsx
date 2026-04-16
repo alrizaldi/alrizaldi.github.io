@@ -1,8 +1,19 @@
+ "use client";
+
 import Link from "next/link";
+import type { MouseEvent } from "react";
 import { ArrowRight, Download } from "lucide-react";
 import { siteConfig } from "@/data/content";
 
 export default function Hero() {
+  const handleGetInTouchClick = (event: MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section className="min-h-screen flex items-center justify-center pt-16 bg-gradient-to-b from-primary-50 to-white dark:from-dark-900 dark:to-dark-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -45,6 +56,7 @@ export default function Hero() {
 
             <Link
               href="#contact"
+              onClick={handleGetInTouchClick}
               className="inline-flex items-center px-8 py-3 rounded-lg border-2 border-dark-300 dark:border-dark-600 hover:border-primary-600 dark:hover:border-primary-400 text-dark-700 dark:text-dark-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-all hover:scale-105"
             >
               Get In Touch

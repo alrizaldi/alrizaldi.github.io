@@ -17,6 +17,9 @@ export const metadata: Metadata = {
   description:
     "Personal portfolio and blog of Rizaldi Akbar, a full stack developer passionate about building elegant solutions with clean code.",
   authors: [{ name: "Rizaldi Akbar" }],
+  icons: {
+    icon: "/icon.svg",
+  },
   openGraph: {
     title: "Rizaldi Akbar - Full Stack Developer",
     description: "Personal portfolio and blog of Rizaldi Akbar",
