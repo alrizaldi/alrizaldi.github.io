@@ -30,7 +30,15 @@ export const skills = {
   ],
   backend: ["Node.js", "Express", "Next.js API Routes", "Laravel"],
   databases: ["MS SQL Server", "MySQL", "PostgreSQL", "MongoDB"],
-  tools: ["VS Code", "Git", "Docker", "CI/CD", "Linux", "Postman", "Hopscotch"],
+  tools: [
+    "VS Code",
+    "Git",
+    "Docker",
+    "CI/CD",
+    "Linux",
+    "Postman",
+    "Hoppscotch",
+  ],
 };
 
 export const projects = [
