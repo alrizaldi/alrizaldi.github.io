@@ -98,7 +98,7 @@ export const projects = [
     title: "Company Profile CMS",
     description:
       "Custom content management system for managing company profiles.",
-    image: "/images/projects/compro.png",
+    image: "/images/projects/001-compro.png",
     tech: ["Next.js", "Vercel", "MongoDB", "Blob Storage"],
     github: "https://github.com/alrizaldi/base-compro",
     live: "https://base-compro.vercel.app/",
@@ -119,6 +119,35 @@ export const projects = [
     outcomes: [
       "Reduced the need for direct developer intervention when content updates are required",
       "Provided a reusable base for future company profile projects",
+    ],
+    featured: true,
+  },
+  {
+    id: 4,
+    slug: "jala-kencana-utama",
+    title: "Jala Kencana Utama",
+    description:
+      "Company profile website for Jala Kencana Utama, highlighting services, company history, and contact information.",
+    image: "/images/projects/002-compro.png",
+    tech: ["Next.js", "Vercel", "Tailwind CSS", "JavaScript"],
+    live: "https://jalakencanautama.vercel.app",
+    role: "Full Stack Developer",
+    period: "2024",
+    overview:
+      "A polished company profile site built for Jala Kencana Utama to present their business, capabilities, and client contact channels in a professional and accessible format.",
+    features: [
+      "Responsive company profile layout optimized for desktop and mobile",
+      "Clear service presentation with structured company information and team details",
+      "Contact section designed to drive customer inquiries and lead generation",
+      "Fast deployment on Vercel for reliable production hosting",
+    ],
+    challenges: [
+      "Delivering a corporate identity online while keeping the site fast and easy to update",
+      "Organizing company content into a structure that works well for multiple service offerings",
+    ],
+    outcomes: [
+      "Provided a strong web presence that supports business credibility and customer trust",
+      "Enabled the client to showcase their company information in a clear, modern format",
     ],
     featured: true,
   },
@@ -159,7 +188,8 @@ export const blogPosts = [
   },
   {
     id: 3,
-    title: "Building Reliable APIs with TypeScript and SQL: Lessons from Production",
+    title:
+      "Building Reliable APIs with TypeScript and SQL: Lessons from Production",
     excerpt:
       "Patterns I use to keep APIs maintainable, type-safe, and easy to evolve when product requirements change quickly.",
     date: "2024-03-15",
