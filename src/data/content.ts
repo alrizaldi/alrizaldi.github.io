@@ -165,8 +165,15 @@ export const projects = [
     title: "My Store - Retail Management System",
     description:
       "Modern full-stack retail management application for small to medium-sized physical stores with comprehensive management capabilities.",
-    image: "/images/projects/my-store.png",
-    tech: ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Supabase", "Tailwind CSS"],
+    image: "/images/projects/003-mystore.png",
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "PostgreSQL",
+      "Prisma",
+      "Supabase",
+      "Tailwind CSS",
+    ],
     live: "https://my-store-alrizaldi.vercel.app/",
     role: "Full Stack Developer",
     period: "2024",
