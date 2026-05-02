@@ -159,6 +159,40 @@ export const projects = [
     ],
     featured: true,
   },
+  {
+    id: 5,
+    slug: "my-store-retail-system",
+    title: "My Store - Retail Management System",
+    description:
+      "Modern full-stack retail management application for small to medium-sized physical stores with comprehensive management capabilities.",
+    image: "/images/projects/my-store.png",
+    tech: ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Supabase", "Tailwind CSS"],
+    live: "https://my-store-alrizaldi.vercel.app/",
+    role: "Full Stack Developer",
+    period: "2024",
+    overview:
+      "My Store is a modern full-stack retail management application designed for small to medium-sized physical stores. It provides comprehensive management capabilities for products, inventory, employees, orders, procurement, and promotions.",
+    features: [
+      "Complete authentication system with login/logout and user management",
+      "Dashboard with aggregated business metrics and analytics",
+      "Full CRUD operations for products and categories management",
+      "Inventory management with stock queries, in/out records, and transfers",
+      "Complete order lifecycle management and payment status synchronization",
+      "Purchase order management and supplier maintenance system",
+      "Employee information management with role assignment and permissions",
+      "Attendance tracking and cashier interface",
+      "Promotion and discount campaign configuration",
+    ],
+    challenges: [
+      "Implementing a responsive UI that works well on both desktop and mobile devices for store operations",
+      "Managing complex data relationships between products, inventory, orders, and suppliers while maintaining performance",
+    ],
+    outcomes: [
+      "Delivered a comprehensive solution that streamlines retail operations from inventory to sales",
+      "Created a scalable architecture that can handle growth from small to medium-sized retail businesses",
+    ],
+    featured: true,
+  },
 ];
 
 export const blogPosts = [
