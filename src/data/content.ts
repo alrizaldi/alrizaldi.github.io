@@ -42,6 +42,48 @@ export const skills = {
 };
 
 export const projects = [
+  {
+    id: 1,
+    slug: "insurance-approval-monitoring",
+    title: "Insurance Approval Monitoring System",
+    description:
+      "Full-stack internal web application for monitoring insurance approval submissions in hospitals.",
+    image: "/images/projects/004-monitoring-insurance.png",
+    live: "https://monis-arya.vercel.app/",
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "PostgreSQL",
+      "Prisma",
+      "Supabase",
+      "Tailwind CSS",
+      "Recharts",
+    ],
+    role: "Full Stack Developer",
+    period: "2024",
+    overview:
+      "An enterprise-grade internal application designed for hospitals to streamline insurance approval submission tracking. The system provides real-time monitoring of approval workflows, master data management, and comprehensive audit logging with secure authentication.",
+    features: [
+      "Dashboard with analytics and real-time submission monitoring",
+      "Master data management for patients, rooms, and insurance payers",
+      "Submission tracking and approval workflow management",
+      "Pending records monitoring with historical tracking",
+      "Comprehensive audit logging system with user tracking and email attribution",
+      "Secure API authentication using Supabase sessions",
+      "Responsive admin interface optimized for hospital operations",
+    ],
+    challenges: [
+      "Implementing secure API routes with proper session management and audit trail tracking",
+      "Managing complex submission workflows with multiple approval states",
+      "Ensuring data integrity and compliance with healthcare information requirements",
+    ],
+    outcomes: [
+      "Delivered a secure system that tracks all operations with authenticated user attribution",
+      "Improved hospital efficiency through real-time monitoring and automated approval workflows",
+      "Established audit capabilities for compliance and operational oversight",
+    ],
+    featured: true,
+  },
   // {
   //   id: 1,
   //   slug: "e-commerce-platform",
@@ -101,7 +143,7 @@ export const projects = [
   //   featured: true,
   // },
   {
-    id: 3,
+    id: 2,
     slug: "company-profile-cms",
     title: "Company Profile CMS",
     description:
@@ -131,7 +173,7 @@ export const projects = [
     featured: true,
   },
   {
-    id: 4,
+    id: 3,
     slug: "jala-kencana-utama",
     title: "Jala Kencana Utama",
     description:
@@ -160,7 +202,7 @@ export const projects = [
     featured: true,
   },
   {
-    id: 5,
+    id: 4,
     slug: "my-store-retail-system",
     title: "My Store - Retail Management System",
     description:
