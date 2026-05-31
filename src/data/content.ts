@@ -60,7 +60,7 @@ export const projects = [
       "Recharts",
     ],
     role: "Full Stack Developer",
-    period: "2024",
+    period: "2026",
     overview:
       "An enterprise-grade internal application designed for hospitals to streamline insurance approval submission tracking. The system provides real-time monitoring of approval workflows, master data management, and comprehensive audit logging with secure authentication.",
     features: [
