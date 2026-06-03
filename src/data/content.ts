@@ -240,7 +240,7 @@ export const projects = [
       "Delivered a comprehensive solution that streamlines retail operations from inventory to sales",
       "Created a scalable architecture that can handle growth from small to medium-sized retail businesses",
     ],
-    featured: true,
+    featured: false,
   },
 ];
 
