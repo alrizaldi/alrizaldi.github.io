@@ -43,6 +43,55 @@ export const skills = {
 
 export const projects = [
   {
+    id: 5,
+    slug: "s-curve-project-monitoring",
+    title: "S-Curve Project Monitoring System",
+    description:
+      "A web-based project monitoring platform that allows organizations to track project progress, compare baseline vs actual performance, and visualize project performance using S-Curve charts.",
+    image: "/images/projects/005-s-curve.png",
+    github: "https://github.com/alrizaldi/s-curve",
+    live: "https://s-curve-flame.vercel.app/",
+    tech: [
+      "Next.js 15",
+      "TypeScript",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Recharts",
+      "Supabase",
+      "PostgreSQL",
+      "Prisma",
+    ],
+    role: "Full Stack Developer",
+    period: "2026",
+    overview:
+      "A generic project monitoring platform that enables organizations across various industries to create projects, build dynamic Work Breakdown Structures (WBS), track project progress, and visualize performance using S-Curve charts. The system is designed to be industry-agnostic, serving construction, software development, manufacturing, and other sectors.",
+    features: [
+      "Authentication system with role-based access control (Admin, Project Manager, Viewer)",
+      "Dynamic Work Breakdown Structure (WBS) with unlimited hierarchical levels",
+      "Project creation and management with start/end dates and status tracking",
+      "Milestone management with due dates and completion tracking",
+      "Baseline creation to lock original project plans for comparison",
+      "Progress tracking with historical snapshots for S-Curve visualization",
+      "Dashboard with KPI cards, project summaries, and upcoming milestones",
+      "S-Curve visualization comparing planned vs actual progress with variance indicators",
+    ],
+    challenges: [
+      "Implementing recursive WBS tree structure with automatic parent progress calculation",
+      "Designing a flexible database schema to support unlimited hierarchy levels",
+      "Creating an intuitive UI for managing complex project structures",
+      "Implementing historical progress tracking without allowing data overwrites",
+      "Building accurate S-Curve visualizations comparing baseline vs actual progress",
+    ],
+    outcomes: [
+      "Delivered a scalable solution that can handle complex project hierarchies across multiple industries",
+      "Implemented role-based access control supporting different user types and permissions",
+      "Created an intuitive interface for non-technical project stakeholders",
+      "Established a robust progress tracking system with historical data preservation",
+      "Developed accurate S-Curve visualizations for project performance analysis",
+    ],
+    featured: true,
+  },
+  {
     id: 1,
     slug: "insurance-approval-monitoring",
     title: "Insurance Approval Monitoring System",
@@ -240,7 +289,7 @@ export const projects = [
       "Delivered a comprehensive solution that streamlines retail operations from inventory to sales",
       "Created a scalable architecture that can handle growth from small to medium-sized retail businesses",
     ],
-    featured: false,
+    featured: true,
   },
 ];
 
